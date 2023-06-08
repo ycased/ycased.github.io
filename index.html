@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ycased</title>
+    <link rel="icon" type="image/png" href="./ico/icon.png">
+    <!-- 引入Bootstrap和自定义CSS文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style/styleindex.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Ycased</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">首页</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./pages/bcsj.html">编程书籍</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">服务</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">关于我们</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-md-6">
+            <div class="container">
+                <h2>项目列表</h2>
+                <ul class="list-group"id="Priject-Lists">
+                    <li class="list-group-item" onclick="atlist()">
+                        <strong>SkylineSystem</strong>
+                    </li>
+                    <li class="list-group-item" onclick="atlist2()">
+                         <strong>Ycased</strong>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+          <img src="./img/image.jpg"  class="img-fluid rounded">
+        </div>
+      </div>
+    </div>
+    
+    <script>
+        function atlist(){
+            window.open("https://github.com/Yo-yo-ooo/SkylineSystem","_blank");
+        }
+        function atlist2(){
+            window.open("https://github.com/ycased/ycased.github.io","_blank");
+        }
+        const projectList = document.getElementById('Priject-Lists');
+        const listItems = projectList.children;
+
+        // 为整个列表容器添加 mouseover 事件
+        projectList.addEventListener('mouseover', (event) => {
+            // 找到鼠标所放置的列表项，使其添加 active 类
+            for(let i = 0; i < listItems.length; i++) {
+            const listItem = listItems[i];
+            if(listItem === event.target) {
+                listItem.classList.add('active');
+            } else {
+                listItem.classList.remove('active');
+            }
+            }
+        })
+    </script>
+    <!-- 引入Bootstrap和自定义JS文件 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
+  </body>
+</html>
