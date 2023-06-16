@@ -9,6 +9,12 @@
     <!-- 引入Bootstrap和自定义CSS文件 -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./style/styleindex.css">
+    <script>
+        function scrollToSection(sectionId) {
+			var section = document.getElementById(sectionId);
+			section.scrollIntoView();
+		}
+    </script>
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
@@ -35,6 +41,19 @@
       <div class="row">
         <div class="col-md-6">
             <div class="container">
+                <h2>目录</h2>
+                <ul class="list-group"id="Priject-Lists">
+                    <li class="list-group-item" onclick="scrollToSection('section_info')">
+                        <strong>简介</strong>
+                    </li>
+                    <li class="list-group-item" onclick="scrollToSection('section_howtorunsky')">
+                         <strong>如何运行SkylineSystem</strong>
+                    </li>
+                </ul>
+            </div>
+            <br>
+            <br>
+            <div class="container">
                 <h2>项目列表</h2>
                 <ul class="list-group"id="Priject-Lists">
                     <li class="list-group-item" onclick="atlist()">
@@ -50,7 +69,26 @@
             </div>
         </div>
         <div class="col-md-6">
-          <img src="./img/image.jpg"  class="img-fluid rounded">
+            <br>
+            <h2 id="section_info">简介</h2>
+            <p>自适应布局。网站使用的是响应式设计，可以自适应不同设备的屏幕尺寸</p>
+            <hr>
+            <br>
+            <h2 id="section_howtorunsky">如何运行SkylineSystem</h2>
+            <h4><span style="padding-left: 2ch;">如何运行 (Linux)</span></h4>
+            <p><span style="padding-left: 3.5ch;">安装 QEMU 如果尚未安装。
+
+            然后下载/克隆存储库并运行该文件。运行RUN.sh就可以</span></p>
+            <br>
+            <h4><span style="padding-left: 2ch;">如何运行 (Windows)</span></h4>
+            <p><span style="padding-left: 3.5ch;">
+                安装 QEMU 如果尚未安装。
+                
+                将 QEMU 添加到 PATH 变量中。如果您在安装时遇到问题并且不知道如何设置 PATH 变量，请单击此处
+                
+                然后下载/克隆存储库并运行该文件。Just RUN OS (Windows).cmd</span></p>
+            <h4><span style="padding-left: 2ch;">真机操作</span></h4>
+            <p><span style="padding-left: 3.5ch;">使用Rufs刻录.iso文件到USB</span></p>
         </div>
       </div>
     </div>
