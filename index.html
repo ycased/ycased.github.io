@@ -1,30 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <link rel="shortcut icon" href="ico/icon.png" >
-    <link rel="stylesheet" type="text/css" href="./css/cssm.css">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ycased</title>
-</head>
-<body>
-    <h1 align="center"><i><strong>Yo-yo-ooo's Open Source</strong></i></h1>
-    <div class="shadowbox" style="float: left;">
-        <h2>Projects</h2>
-        <ul>
-        <li><a href="https://github.com/Yo-yo-ooo/PxttpOS" target="_blank">PxttpOS(SkylineSystem v2)</a></li>
-        <li><a href="https://github.com/Yo-yo-ooo/SkylineSystem" target="_blank">SkylineSystem(正式版 v1)</a></li>
-        <li><a href="https://github.com/Yo-yo-ooo/slos" target="_blank">SkylineSystem(测试版)</a></li>
-        <li><a href="https://github.com/Yo-yo-ooo/ycased" target="_blank">ycased(本网站源代码)</a></li>
+    <link rel="icon" type="image/png" href="./ico/icon.png">
+    <!-- 引入Bootstrap和自定义CSS文件 -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style/styleindex.css">
+    <script>
+        function scrollToSection(sectionId) {
+			var section = document.getElementById(sectionId);
+			section.scrollIntoView();
+		}
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Ycased</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">首页</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./pages/bcsj.html" target="_blank">编程书籍</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./pages/dh/index.html" target="_blank">导航</a>
+          </li>
         </ul>
-        <h2>你知道吗？</h2>
-        <ul>
-        <li>这些是由Yo-yo-ooo单独完成的</li>
-        </ul>
+      </div>
+    </nav>
+
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-md-6">
+            <div class="container">
+                <h2>目录</h2>
+                <ul class="list-group"id="Priject-Lists">
+                    <li class="list-group-item" onclick="scrollToSection('section_info')">
+                        <strong>简介</strong>
+                    </li>
+                    <li class="list-group-item" onclick="scrollToSection('section_howtorunsky')">
+                         <strong>如何运行SkylineSystem</strong>
+                    </li>
+                </ul>
+            </div>
+            <br>
+            <br>
+            <div class="container">
+                <h2>项目列表</h2>
+                <ul class="list-group"id="Priject-Lists">
+                    <li class="list-group-item" onclick="atlist()">
+                        <strong>SkylineSystem</strong>
+                    </li>
+                    <li class="list-group-item" onclick="atlist2()">
+                         <strong>Ycased</strong>
+                    </li>
+                    <li class="list-group-item" onclick="atlist3()">
+                        <strong>Library Box</strong>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <br>
+            <h2 id="section_info">简介</h2>
+            <p>自适应布局。网站使用的是响应式设计，可以自适应不同设备的屏幕尺寸</p>
+            <hr>
+            <br>
+            <h2 id="section_howtorunsky">如何运行SkylineSystem</h2>
+            <h4><span style="padding-left: 2ch;">如何运行 (Linux)</span></h4>
+            <p><span style="padding-left: 3.5ch;">安装 QEMU 如果尚未安装。
+
+            然后下载/克隆存储库并运行该文件。运行RUN.sh就可以</span></p>
+            <br>
+            <h4><span style="padding-left: 2ch;">如何运行 (Windows)</span></h4>
+            <p><span style="padding-left: 3.5ch;">
+                安装 QEMU 如果尚未安装。
+                
+                将 QEMU 添加到 PATH 变量中。如果您在安装时遇到问题并且不知道如何设置 PATH 变量，请单击此处
+                
+                然后下载/克隆存储库并运行该文件。Just RUN OS (Windows).cmd</span></p>
+            <h4><span style="padding-left: 2ch;">真机操作</span></h4>
+            <p><span style="padding-left: 3.5ch;">使用Rufs刻录.iso文件到USB</span></p>
+        </div>
+      </div>
     </div>
-    <div style="float: inline-start;width:20%">
-        <h2 align="center">SkylineSystem Project</h2>
     
-    </div>
-    
-</body>
+    <script>
+        function atlist(){
+            window.open("https://github.com/Yo-yo-ooo/SkylineSystem","_blank");
+        }
+        function atlist2(){
+            window.open("https://github.com/ycased/ycased.github.io","_blank");
+        }
+        function atlist3(){
+            window.open("https://github.com/Yo-yo-ooo/LibraryBox","_blank");
+        }
+        const projectList = document.getElementById('Priject-Lists');
+        const listItems = projectList.children;
+
+        // 为整个列表容器添加 mouseover 事件
+        projectList.addEventListener('mouseover', (event) => {
+            // 找到鼠标所放置的列表项，使其添加 active 类
+            for(let i = 0; i < listItems.length; i++) {
+            const listItem = listItems[i];
+            if(listItem === event.target) {
+                listItem.classList.add('active');
+            } else {
+                listItem.classList.remove('active');
+            }
+            }
+        })
+    </script>
+    <!-- 引入Bootstrap和自定义JS文件 -->
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+  </body>
 </html>
